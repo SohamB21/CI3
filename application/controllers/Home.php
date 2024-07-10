@@ -24,11 +24,11 @@ class Home extends CI_Controller
         // $title = "Demo Title";
         // echo url_title($title, '-', true);
 
-        $this->load->helper('form');
-        $this->load->view('home');
+        // $this->load->helper('form');
+        // $this->load->view('home');
 
-        $this->load->helper('captcha');
-        $this->load->helper('url');
+        // $this->load->helper('captcha');
+        // $this->load->helper('url');
 
         // $captchaArray = array(
         //     'word' => 'Random word',
@@ -53,15 +53,58 @@ class Home extends CI_Controller
         // // echo APPPATH . '../assets/images/';
         // echo FCPATH . 'assets/images/';
 
-        $this->load->helper('html');
-        echo heading($data = 'Here is my data', $h = '3xampp', $attributes = 'class="one"');
+        // $this->load->helper('html');
+        // echo heading($data = 'Here is my data', $h = '3xampp', $attributes = 'class="one"');
 
         // library
-        $this->load->library('calendar');
-        $this->load->library('cart');
-        $this->load->library('encryption');
-    }
+        // $this->load->library('calendar');
+        // $this->load->library('cart');
+        // $this->load->library('encryption');
 
+        // database configuration
+        // $myReturn = $this->ModHome->getAllRecords();
+        // var_dump($myReturn->result());
+        // foreach ($myReturn->result() as $user) {
+        //     echo $user->id . '<br>';
+        //     echo $user->email . '<br>';
+        //     echo $user->password . '<br>';
+        //     echo $user->fullName . '<br><br>';
+        // }
+
+        // $data['allUser'] = $this->ModHome->getAllRecords();
+        // $this->load->view('home', $data);
+
+        $mixupData = $this->ModHome->mixup();
+        // var_dump($mixupData->num_rows());
+        var_dump($mixupData->result());
+    }
+    public function insertController()
+    {
+        $dataArray = array(
+            'email' => 'new2@gmail.com',
+            'password'=> 'new2',
+            'date' => date("Y-m-d h:i:sa"),
+            'fullName' => 'new2'
+        );
+        $insertResult = $this->ModHome->insertData($dataArray);
+        var_dump($insertResult);
+    }
+    public function updateController()
+    {
+        $dataArray = array(
+            'email' => 'new3@gmail.com',
+            'password'=> 'new3',
+            'date' => date("Y-m-d h:i:sa"),
+            'fullName' => 'new3'
+        );
+        $updateResult = $this->ModHome->updateData(8, $dataArray);
+        var_dump($updateResult);
+    }
+    public function deleteController()
+    {
+        $deleteResult = $this->ModHome->deleteData(10);
+        var_dump($deleteResult);
+    }
     public function anotherMethod()
     {
         echo "this is another method";
@@ -105,6 +148,5 @@ class Home extends CI_Controller
         } else {
             echo "fine";
         }
-        
     }
 }

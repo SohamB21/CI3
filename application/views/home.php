@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <h2>Welcome to CI 3 Form Helper!</h2>
+    <h2>Welcome to CI 3 Database Configuration!</h2>
     <?php
     // echo form_open(action: 'home/login');
     // echo form_open_multipart(action: 'home/login', attributes: 'method="get"');
@@ -28,16 +28,30 @@
     // echo form_upload('myfilename');
     // echo form_close();
     ?>
-    <?php echo validation_errors(); ?> 
-    <?php echo form_open_multipart(action: 'home/user') ?>
-    <input type="text" value="fullName" placeholder="Enter your full name:">
+
+    <!-- form validations -->
+    <!-- <?php echo validation_errors(); ?> 
+    <?php echo form_open_multipart(action: 'home/user') ?> -->
+    <!-- <input type="text" value="fullName" placeholder="Enter your full name:">
     <input type="text" value="email" placeholder="Enter your email:">
     <input type="password" value="password" placeholder="Enter your password:">
-    <input type="password" value="confpassword" placeholder="Confirm your password:">
+    <input type="password" value="confpassword" placeholder="Confirm your password:"> -->
 
     <!-- <input type="file" name="myimg"> -->
-    <button type="submit">Submit</button>
-    <?php echo form_close(); ?>
+    <!-- <button type="submit">Submit</button> -->
+    <!-- <?php echo form_close(); ?> -->
+
+    <table border="1">
+        <?php foreach($allUser->result() as $user): ?>
+            <tr>
+                <td><?php echo $user->id; ?></td>
+                <td><?php echo $user->fullName; ?></td>
+                <td><?php echo $user->email; ?></td>
+                <td><?php echo $user->date; ?></td>
+                <td><?php echo $user->password; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 
 </html>
