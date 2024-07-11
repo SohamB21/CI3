@@ -1,3 +1,10 @@
+<h3>navigation here</h3>
+<h3>home section here</h3>
+
+
+
+
+<!--
 <html>
 
 <head>
@@ -30,19 +37,19 @@
     ?>
 
     <!-- form validations -->
-    <!-- <?php echo validation_errors(); ?> 
-    <?php echo form_open_multipart(action: 'home/user') ?> -->
-    <!-- <input type="text" value="fullName" placeholder="Enter your full name:">
-    <input type="text" value="email" placeholder="Enter your email:">
-    <input type="password" value="password" placeholder="Enter your password:">
-    <input type="password" value="confpassword" placeholder="Confirm your password:"> -->
+<!-- <?php echo validation_errors(); ?> 
+    <?php echo form_open_multipart('home/user') ?> -->
+<!-- <input type="text" name="fullName" placeholder="Enter your full name:">
+    <input type="text" name="email" placeholder="Enter your email:">
+    <input type="password" name="password" placeholder="Enter your password:">
+    <input type="password" name="confpassword" placeholder="Confirm your password:"> -->
 
-    <!-- <input type="file" name="myimg"> -->
-    <!-- <button type="submit">Submit</button> -->
-    <!-- <?php echo form_close(); ?> -->
+<!-- <input type="file" name="myimg"> -->
+<!-- <button type="submit">Submit</button> -->
+<!-- <?php echo form_close(); ?> -->
 
-    <table border="1">
-        <?php foreach($allUser->result() as $user): ?>
+<!-- <table border="1">
+        <?php foreach ($allUser->result() as $user) : ?>
             <tr>
                 <td><?php echo $user->id; ?></td>
                 <td><?php echo $user->fullName; ?></td>
@@ -51,7 +58,8 @@
                 <td><?php echo $user->password; ?></td>
             </tr>
         <?php endforeach; ?>
-    </table>
+    </table> -->
 </body>
 
 </html>
+-->

@@ -74,15 +74,50 @@ class Home extends CI_Controller
         // $data['allUser'] = $this->ModHome->getAllRecords();
         // $this->load->view('home', $data);
 
-        $mixupData = $this->ModHome->mixup();
+        // $mixupData = $this->ModHome->mixup();
         // var_dump($mixupData->num_rows());
-        var_dump($mixupData->result());
+        // var_dump($mixupData->result());
+
+        // BLOG PROJECT STARTS HERE
+        // $this->load->view('home');
+        $this->load->view('header/header');
+        $this->load->view('header/css');
+        $this->load->view('header/navigation');
+        $this->load->view('content/home');
+        $this->load->view('registration/signup');
+        $this->load->view('footer/footer');
+        $this->load->view('footer/js');
+        $this->load->view('footer/endhtml');
     }
+    public function about()
+    {
+        $this->load->view('header/header');
+        $this->load->view('header/css');
+        $this->load->view('header/customCSS/css');
+        $this->load->view('header/navigation');
+        $this->load->view('content/about');
+        $this->load->view('footer/footer');
+        $this->load->view('footer/js');
+        $this->load->view('footer/customJS/js');
+        $this->load->view('footer/endhtml');
+    }
+    public function contactus()
+    {
+        $this->load->view('header/header');
+        $this->load->view('header/css');
+        $this->load->view('header/navigation');
+        $this->load->view('content/contactus');
+        $this->load->view('footer/footer');
+        $this->load->view('footer/js');
+        $this->load->view('footer/endhtml');
+    }
+
+
     public function insertController()
     {
         $dataArray = array(
             'email' => 'new2@gmail.com',
-            'password'=> 'new2',
+            'password' => 'new2',
             'date' => date("Y-m-d h:i:sa"),
             'fullName' => 'new2'
         );
@@ -93,7 +128,7 @@ class Home extends CI_Controller
     {
         $dataArray = array(
             'email' => 'new3@gmail.com',
-            'password'=> 'new3',
+            'password' => 'new3',
             'date' => date("Y-m-d h:i:sa"),
             'fullName' => 'new3'
         );
@@ -109,7 +144,6 @@ class Home extends CI_Controller
     {
         echo "this is another method";
     }
-
     public function login()
     {
         // echo $this->input->post('radioname', true) . '<br>';
@@ -117,7 +151,6 @@ class Home extends CI_Controller
         // echo $this->input->post('myoption', true) . '<br>';
         echo $this->input->get_post('name', true);
     }
-
     public function myFile()
     {
         $config['upload_path'] = APPPATH . '../assets/images/';
@@ -133,7 +166,6 @@ class Home extends CI_Controller
             echo "uploaded";
         }
     }
-
     public function user()
     {
         // echo "working";
