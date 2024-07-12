@@ -84,7 +84,6 @@ class Home extends CI_Controller
         $this->load->view('header/css');
         $this->load->view('header/navigation');
         $this->load->view('content/home');
-        $this->load->view('registration/signup');
         $this->load->view('footer/footer');
         $this->load->view('footer/js');
         $this->load->view('footer/endhtml');

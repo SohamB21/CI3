@@ -1,3 +1,3 @@
-<h2>
-    JS Plugin Here
-</h2>
+<h3>
+    customJS plugin here
+</h3>
