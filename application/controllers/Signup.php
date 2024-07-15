@@ -108,7 +108,7 @@ class Signup extends CI_Controller
                 $linkReturn = $this->ModRegister->activateAccount($link, $data);
 
                 if ($linkReturn) {
-                    $this->session->set_flashdata('message', 'Account successfully linked!');
+                    $this->session->set_flashdata('message', 'Account successfully linked. Signin please!');
                 } else {
                     $this->session->set_flashdata('message', 'Failed to link account, please try again!');
                 }

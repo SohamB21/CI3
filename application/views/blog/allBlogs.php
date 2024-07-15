@@ -5,11 +5,11 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
                     <h1>
-                        Welcome <?php echo $this->session->userdata('uFullName')
-                                    ? $this->session->userdata('uFullName')
-                                    : 'User'; ?>
+                        Blogs of <?php echo $this->session->userdata('uFullName')
+                                        ? $this->session->userdata('uFullName')
+                                        : 'User'; ?>
                     </h1>
-                    <span class="subheading">To Your Source Of Insights And Inspiration.</span>
+                    <span class="subheading">Sharing Knowledge, One Blog At A Time.</span>
                 </div>
             </div>
         </div>
@@ -31,7 +31,9 @@
                         <p class="post-meta">
                             Posted by
                             <a href="#!">
-                                <?php echo !empty($blog->fullName) ? $blog->fullName : 'Unknown'; ?>
+                                <?php echo !empty($blog->fullName)
+                                    ? $blog->fullName
+                                    : $this->session->userdata('uFullName'); ?>
                             </a>
                             on <?php echo date('F d, Y', strtotime($blog->bDate)); ?>
                         </p>

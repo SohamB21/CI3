@@ -80,10 +80,12 @@ class Home extends CI_Controller
 
         // BLOG PROJECT STARTS HERE
         // $this->load->view('home');
+        $data['allBlogs'] = $this->ModBlog->getAllBlogs();
+
         $this->load->view('header/header');
         $this->load->view('header/css');
         $this->load->view('header/navigation');
-        $this->load->view('content/home');
+        $this->load->view('content/home', $data);
         $this->load->view('footer/footer');
         $this->load->view('footer/js');
         $this->load->view('footer/endhtml');

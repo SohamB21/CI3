@@ -33,8 +33,9 @@ class Signin extends CI_Controller
                 $sessionValue = array(
                     'uId' => $checkResult[0]['id'],
                     'uEmail' => $checkResult[0]['email'],
-                    'uFullname' => $checkResult[0]['fullname']
+                    'uFullName' => $checkResult[0]['fullName']
                 );
+                // var_dump($sessionValue);
                 $this->session->set_userdata($sessionValue);
 
                 if ($this->session->userdata('uId')) {
